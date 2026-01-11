@@ -1,3 +1,4 @@
+package Java;
 public class Arrays {
     public static void main(String[] args) {
         // WE HAVE TO WAYS TO CREATE ARRAYS
