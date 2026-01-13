@@ -14,6 +14,10 @@ public class GradeAnalyzer {
             
             // Call method to fill grades ( Pass scanner inside)
             fillGrades(grades, scanner);
+
+            // Call the new method(findMax)
+            int bestGrade = findMax(grades);
+            System.out.println("Best Grade: " + bestGrade + "🏆");
             
             // Calculate average
             double average = calculateAverage(grades);
@@ -32,7 +36,7 @@ public class GradeAnalyzer {
     }
         // ----- METHODS TO IMPLEMENT -----
 
-        // Method to fill the array
+        // Method #1 to fill the array
         public static void fillGrades(int[] grades, Scanner scanner) {
             // use basic for , cause we need index
             for(int i = 0; i < grades.length; i++) {
@@ -40,7 +44,7 @@ public class GradeAnalyzer {
                 grades[i] = scanner.nextInt();
             }
         }
-        // Method calculate the average
+        // Method #2 calculate the average
         public static double calculateAverage(int[] grades) {
             int sum = 0;
             // Use for-each
@@ -48,6 +52,20 @@ public class GradeAnalyzer {
                 sum += grade; // sum = sum + grade
             }
             return (double) sum / grades.length;
+        }
+        // Method #3 Find max
+        public static int findMax(int[] grades) {
+            // 1. Assume the first one is the max
+            int max = grades[0];
+
+            // 2. Loop through the rest
+            for (int grade : grades) {
+                // 3. Compare
+                if (grade > max) {
+                    max = grade; // Update the max
+                }
+            }
+            return max;
         }
 }
 
