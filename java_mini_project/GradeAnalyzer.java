@@ -17,7 +17,11 @@ public class GradeAnalyzer {
 
             // Call the new method(findMax)
             int bestGrade = findMax(grades);
-            System.out.println("Best Grade: " + bestGrade + "🏆");
+            System.out.println("Best Grade: " + bestGrade + " 🏆");
+
+            // Call the new method(findMin)
+            int worstGrade = findMin(grades);
+            System.out.println("The worst Grade: " + worstGrade + "| it's really bad...");
             
             // Calculate average
             double average = calculateAverage(grades);
@@ -66,6 +70,17 @@ public class GradeAnalyzer {
                 }
             }
             return max;
+        }
+        public static int findMin(int[] grades) {
+            int min = grades[0];
+
+            for(int grade : grades) {
+                if(grade < min) {
+                    min = grade;
+                    
+                }
+            }
+            return min;
         }
 }
 
