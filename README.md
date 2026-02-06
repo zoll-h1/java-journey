@@ -4,6 +4,6 @@ This repository contains my code snippets, exercises, and university tasks while
 It's a sandbox, so the code might be messy.
 
 Currently learning:
-- [ ] OOP basics
-- [ ] Collections
+- [x] OOP basics
+- [x] Collections
 - [x] Hello World
