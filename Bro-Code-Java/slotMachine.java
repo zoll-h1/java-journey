@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class slotMachine {
@@ -13,12 +14,12 @@ public class slotMachine {
         // Display Welcome message
         System.out.println("----------------------------");
         System.out.println("Welcome to Java Slots Machine");
-        System.out.println("Symbols : \uEBA1  \uEA84  \uEB00");
+        System.out.println("Symbols :\"\uD83C\uDF4B\", \"\uD83C\uDF4A\", \"\uD83C\uDF52\", \"\uD83C\uDF53\"");
 
         // Play if balance > 0;
         while(balance > 0) {
             System.out.println("Current Balance : $" + balance);
-            System.out.println("Place your bet amount: ");
+            System.out.print("Place your bet amount: ");
         // Enter the bet amount
             bet = scanner.nextInt();
         // Verify if bet > balance
@@ -35,11 +36,15 @@ public class slotMachine {
         // Subtract bet from balance
                 balance -= bet;
             }
+            System.out.println("Spinning...");
+        // Spin row
+            row = spinRow();
+            printRow(row);
+
+
         }
 
-        // Spin row
 
-        // Print row
 
         // Get payout
 
@@ -47,5 +52,22 @@ public class slotMachine {
 
         // Display a exit message
         scanner.close();
+    }
+    static String[] spinRow() {
+        String[] symbols = {"🍋", "🍊", "🍒", "🍓"};
+        String[] row = new String[3];
+        Random random = new Random();
+        // Print row
+
+       for(int i = 0; i < 3; i++) {
+           row[i] = symbols[random.nextInt(symbols.length)];
+
+       }
+        return row;
+    }
+    static void printRow(String[] row) {
+        System.out.println("--------------");
+        System.out.println(" " + String.join(" | " , row));
+        System.out.println("--------------");
     }
 }
