@@ -3,7 +3,7 @@ public class Main {
         Greeting g = new Greeting() {
             @Override
             public void sayNigga() {
-                System.out.println("NIgga!!");
+                System.out.println("Nigga!!");
             }
         };
         g.sayNigga();
